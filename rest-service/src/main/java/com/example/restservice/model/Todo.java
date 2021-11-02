@@ -1,8 +1,16 @@
 package com.example.restservice.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.springframework.hateoas.RepresentationModel;
 
+@Entity
 public class Todo extends RepresentationModel<Todo> {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
     private String content;
@@ -11,8 +19,7 @@ public class Todo extends RepresentationModel<Todo> {
     public Todo() {
     }
 
-    public Todo(int id, String title, String content, int status) {
-        this.id = id;
+    public Todo(String title, String content, int status) {
         this.title = title;
         this.content = content;
         this.status = status;
