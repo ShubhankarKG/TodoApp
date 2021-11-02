@@ -23,6 +23,7 @@ This is just a regular Todo App. The aim is to learn the Tech stack.
     "id": 1,
     "title" : "Todo title",
     "description": "Todo description",
+    "status": "Finished | Pending",
     "user_id": 123
 }
 ```
