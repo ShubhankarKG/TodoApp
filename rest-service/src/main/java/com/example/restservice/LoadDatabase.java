@@ -9,11 +9,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+// @Configuration
 class LoadDatabase {
     private static final Logger logger = LoggerFactory.getLogger(LoadDatabase.class);
 
-    @Bean
+    // @Bean
     CommandLineRunner initDatabase(TodoRepository todoRepository) {
         return args -> {
             todoRepository.save(new Todo("Buy milk", "Content 1", 0));
