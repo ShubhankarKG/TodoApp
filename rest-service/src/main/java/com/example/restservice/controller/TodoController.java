@@ -11,8 +11,6 @@ import com.example.restservice.repository.TodoRepository;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +40,12 @@ public class TodoController {
             linkTo(methodOn(TodoController.class).allTodos()).withSelfRel()
         );
     }
+
+    // @GetMapping("/todos")
+    // List<Todo> allTodos() {
+    //     List<Todo> todos = repository.findAll();
+    //     return todos;
+    // }
 
     @GetMapping("/todos/{id}")
     EntityModel<Todo> getTodo(@PathVariable int id) {
