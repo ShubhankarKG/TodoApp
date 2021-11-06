@@ -19,3 +19,6 @@ jobs:
         run: mvn --batch-mode --update-snapshots test
       - name: Codecov
         uses: codecov/codecov-action@v2.1.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
