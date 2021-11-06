@@ -38,3 +38,11 @@ This is just a regular Todo App. The aim is to learn the Tech stack.
     "password": "hash(password)",
 }
 ```
+
+## Tests
+
+```bash
+$ cd rest-service
+$ chmod +x mvnw
+$ ./mvnw test
+```
