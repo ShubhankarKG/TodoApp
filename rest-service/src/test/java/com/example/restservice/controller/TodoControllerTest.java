@@ -86,6 +86,19 @@ public class TodoControllerTest {
     }
 
     @Test
+    public void updateTodoTest_update() throws Exception {
+        Todo updated_todo = new Todo("Updated test title", "Updated test Content", 0);
+        Mockito.when(todoRepository.save(updated_todo)).thenReturn(updated_todo);
+        mockMvc.perform(MockMvcRequestBuilders
+            .put("/todos/1")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(updated_todo)))
+            .andExpect(status().isCreated())
+            .andExpect(jsonPath("$.title", is(updated_todo.getTitle())))
+            .andExpect(jsonPath("$.content", is(updated_todo.getContent())));
+    }
+
+    @Test
     public void deleteTodoTest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
             .delete("/todos/1")
