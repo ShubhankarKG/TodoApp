@@ -2,6 +2,8 @@
 
 This is just a regular Todo App. The aim is to learn the Tech stack.
 
+[![codecov](https://codecov.io/gh/ShubhankarKG/TodoApp/branch/master/graph/badge.svg?token=G1F6YFCKZD)](https://codecov.io/gh/ShubhankarKG/TodoApp)
+
 ## Tech stack
 
 1. Frontend - Angular
