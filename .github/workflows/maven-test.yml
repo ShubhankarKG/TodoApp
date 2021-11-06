@@ -5,7 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./rest-service
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
@@ -13,8 +15,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Change working directory
-        run: cd rest-service
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots test
       - name: Codecov
