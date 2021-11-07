@@ -14,6 +14,9 @@ parsers:
       method: no
       macro: no
 
+ignore:
+  - "rest-service/src/main/java/com/example/restservice/LoadDatabase.java"
+
 comment:
   layout: "reach,diff,flags,files,footer"
   behavior: default
