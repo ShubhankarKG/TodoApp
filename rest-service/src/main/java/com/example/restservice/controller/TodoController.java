@@ -41,12 +41,6 @@ public class TodoController {
         );
     }
 
-    // @GetMapping("/todos")
-    // List<Todo> allTodos() {
-    //     List<Todo> todos = repository.findAll();
-    //     return todos;
-    // }
-
     @GetMapping("/todos/{id}")
     EntityModel<Todo> getTodo(@PathVariable int id) {
         Todo todo = repository.findById(id)

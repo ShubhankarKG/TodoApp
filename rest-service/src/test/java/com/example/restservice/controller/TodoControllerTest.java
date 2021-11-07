@@ -62,6 +62,16 @@ public class TodoControllerTest {
     }
 
     @Test
+    public void getTodoByIdExceptionTest() throws Exception {
+        Mockito.when(todoRepository.findById(100)).thenReturn(java.util.Optional.empty());
+        mockMvc.perform(MockMvcRequestBuilders
+            .get("/todos/100")
+            .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isNotFound())
+            .andExpect(jsonPath("$.errorMessage", is("Could not find todo 100")));
+    }
+
+    @Test
     public void createTodoTest() throws Exception {
         Todo todo = new Todo("Test title", "Test Content", 0);
         Mockito.when(todoRepository.save(todo)).thenReturn(todo);

@@ -11,7 +11,7 @@ public class TodoNotFoundAdvice {
     @ResponseBody
     @ExceptionHandler(TodoNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String todoNotFoundHandler(TodoNotFoundException ex) {
-        return ex.getMessage();
+    ExceptionResponse todoNotFoundHandler(TodoNotFoundException ex) {
+        return new ExceptionResponse(HttpStatus.NOT_FOUND ,ex.getMessage());
     }
 }
